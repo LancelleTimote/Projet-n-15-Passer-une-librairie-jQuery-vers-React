@@ -8,6 +8,9 @@ function Header() {
             <Link to="/">
                 <img src={Logo} alt="Hrnet Logo" className="header_logo" />
             </Link>
+            <Link to="/employeeList" className="header_link">
+                View Current Employees
+            </Link>
         </header>
     );
 }
