@@ -5,7 +5,7 @@ import "./ErrorPage.scss";
 
 function ErrorPage() {
     return (
-        <div className="errorPage">
+        <div className="allHeight flexPlacement">
             <Header />
             <Error />
             <Footer />

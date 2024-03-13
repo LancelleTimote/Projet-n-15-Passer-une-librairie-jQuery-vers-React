@@ -1,0 +1,31 @@
+.home {
+    &_container {
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        &_form {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 25px 40px;
+            border: solid;
+            &_title {
+                margin-top: 0;
+                text-align: center;
+            }
+            &_littleContainer {
+                display: flex;
+                &_test {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+            &_fieldset {
+                padding: 25px 40px;
+                &_littleContainer {
+                    display: flex;
+                }
+            }
+        }
+    }
+}

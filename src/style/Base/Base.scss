@@ -8,3 +8,12 @@
 body {
     margin: 0;
 }
+
+.allHeight {
+    min-height: 100vh;
+}
+
+.flexPlacement {
+    display: flex;
+    flex-direction: column;
+}

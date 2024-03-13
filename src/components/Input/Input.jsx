@@ -1,8 +1,8 @@
 import "./Input.scss";
 
-function Input({ htmlFor, labelText, type, inputId }) {
+function Input({ containerClassname, htmlFor, labelText, type, inputId }) {
     return (
-        <div>
+        <div className={containerClassname}>
             <label htmlFor={htmlFor}>{labelText}</label>
             <input type={type} id={inputId} />
         </div>

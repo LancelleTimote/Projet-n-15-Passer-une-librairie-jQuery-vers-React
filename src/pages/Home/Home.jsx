@@ -88,32 +88,40 @@ function Home() {
     ];
 
     return (
-        <div>
+        <div className="allHeight flexPlacement home">
             <Header />
-            <div>
-                <h2>Create Employee</h2>
-                <form>
-                    <Input htmlFor={"first_name"} labelText={"First Name"} type={"text"} inputId={"first_name"} />
-                    <Input htmlFor={"last_name"} labelText={"Last Name"} type={"text"} inputId={"last_name"} />
-                    <div>
-                        <label htmlFor="date_of_birth">Date of Birth</label>
-                        <DatePicker selected={dateOfBirth} onChange={handleDateOfBirthChange} />
+            <div className="flexPlacement home_container">
+                <form className="home_container_form">
+                    <h2 className="home_container_form_title">Create Employee</h2>
+                    <div className="home_container_form_littleContainer">
+                        <Input htmlFor={"first_name"} labelText={"First Name"} type={"text"} inputId={"first_name"} />
+                        <Input htmlFor={"last_name"} labelText={"Last Name"} type={"text"} inputId={"last_name"} />
                     </div>
-                    <div>
-                        <label htmlFor="start_date">Start Date</label>
-                        <DatePicker selected={startDate} onChange={handleStartDateChange} />
-                    </div>
-                    <fieldset>
-                        <legend>Address</legend>
-                        <Input htmlFor={"street"} labelText={"Street"} type={"text"} inputId={"street"} />
-                        <Input htmlFor={"city"} labelText={"City"} type={"text"} inputId={"city"} />
+                    <div className="home_container_form_littleContainer">
                         <div>
-                            <label htmlFor="state">State</label>
-                            <Dropdown options={stateOptions} onChange={(option) => setSelectedState(option)} value={selectedState} placeholder="Select a state" />
+                            <label htmlFor="date_of_birth">Date of Birth</label>
+                            <DatePicker selected={dateOfBirth} onChange={handleDateOfBirthChange} />
                         </div>
-                        <Input htmlFor={"zip_code"} labelText={"Zip Code"} type={"text"} inputId={"zip_code"} />
+                        <div>
+                            <label htmlFor="start_date">Start Date</label>
+                            <DatePicker selected={startDate} onChange={handleStartDateChange} />
+                        </div>
+                    </div>
+                    <fieldset className="home_container_form_fieldset">
+                        <legend>Address</legend>
+                        <div className="home_container_form_fieldset_littleContainer">
+                            <Input htmlFor={"street"} labelText={"Street"} type={"text"} inputId={"street"} />
+                            <Input htmlFor={"city"} labelText={"City"} type={"text"} inputId={"city"} />
+                        </div>
+                        <div className="home_container_form_fieldset_littleContainer">
+                            <div>
+                                <label htmlFor="state">State</label>
+                                <Dropdown options={stateOptions} onChange={(option) => setSelectedState(option)} value={selectedState} placeholder="Select a state" />
+                            </div>
+                            <Input htmlFor={"zip_code"} labelText={"Zip Code"} type={"number"} inputId={"zip_code"} />
+                        </div>
                     </fieldset>
-                    <div>
+                    <div className="home_container_form_littleContainer">
                         <label htmlFor="department">Department</label>
                         <Dropdown options={departmentOptions} onChange={(option) => setSelectedDepartment(option)} value={selectedDepartment} placeholder="Select a department" />
                     </div>
