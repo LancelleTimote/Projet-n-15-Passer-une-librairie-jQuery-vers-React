@@ -1,3 +1,5 @@
+@import "../../style/Utils/Variables.scss";
+
 .home {
     &_container {
         align-items: center;
@@ -8,22 +10,74 @@
             flex-direction: column;
             gap: 30px;
             padding: 25px 40px;
-            border: solid;
+            background: $primary-color;
+            width: 40%;
+            input {
+                border: none;
+                border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+                font-size: 17px;
+            }
             &_title {
                 margin-top: 0;
                 text-align: center;
+                font-size: 40px;
+                font-weight: 600;
+                background: -webkit-linear-gradient(right, #6c840e, #b2d105, #6c840e, #b2d105);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
             &_littleContainer {
                 display: flex;
-                &_test {
+                gap: 30px;
+                &_firstName,
+                &_lastName {
                     display: flex;
                     flex-direction: column;
                 }
             }
             &_fieldset {
-                padding: 25px 40px;
-                &_littleContainer {
-                    display: flex;
+                padding: 20px 30px;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                margin: 0;
+            }
+            &_firstName,
+            &_lastName,
+            &_dateOfBirth,
+            &_startDate,
+            &_street,
+            &_city,
+            &_state,
+            &_zipCode,
+            &_department {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+            }
+            &_state div,
+            &_department div {
+                cursor: pointer;
+            }
+            &_dateOfBirth input,
+            &_startDate input {
+                width: 100%;
+            }
+            &_button {
+                display: flex;
+                justify-content: center;
+                &_save {
+                    background: linear-gradient(115deg, #6c840e 10%, #b2d105 90%);
+                    border: none;
+                    color: $primary-color;
+                    cursor: pointer;
+                    width: 20%;
+                    height: 35px;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    letter-spacing: 2px;
                 }
             }
         }

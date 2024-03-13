@@ -17,3 +17,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.gradientColor {
+    background: linear-gradient(115deg, #6c840e 10%, #b2d105 90%);
+}
