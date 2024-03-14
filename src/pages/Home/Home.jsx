@@ -9,12 +9,19 @@ import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import stateOptions from "../../services/states.json";
 import departmentOptions from "../../services/departments.json";
+import { saveFormData } from "../../store/employeeSlice";
+import { useDispatch } from "react-redux";
 
 function Home() {
-    const [dateOfBirth, setDateOfBirth] = useState(null);
-    const [startDate, setStartDate] = useState(null);
-    const [selectedState, setSelectedState] = useState(null);
-    const [selectedDepartment, setSelectedDepartment] = useState(null);
+    const [dateOfBirth, setDateOfBirth] = useState("");
+    const [startDate, setStartDate] = useState("");
+    const [selectedState, setSelectedState] = useState("");
+    const [selectedDepartment, setSelectedDepartment] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [street, setStreet] = useState("");
+    const [city, setCity] = useState("");
+    const [zipCode, setZipCode] = useState("");
 
     const handleDateOfBirthChange = (date) => {
         setDateOfBirth(date);
@@ -24,15 +31,35 @@ function Home() {
         setStartDate(date);
     };
 
+    const dispatch = useDispatch();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formData = {
+            firstName,
+            lastName,
+            dateOfBirth,
+            startDate,
+            address: {
+                street,
+                city,
+                state: selectedState,
+                zipCode,
+            },
+            department: selectedDepartment,
+        };
+        dispatch(saveFormData(formData));
+    };
+
     return (
         <div className="allHeight flexPlacement home">
             <Header />
             <div className="flexPlacement gradientColor home_container">
-                <form className="home_container_form" onSubmit={""}>
+                <form className="home_container_form" onSubmit={handleSubmit}>
                     <h1 className="home_container_form_title">Create Employee</h1>
                     <div className="home_container_form_littleContainer">
-                        <Input containerClassname={"home_container_form_firstName"} htmlFor={"first_name"} labelText={"First Name"} type={"text"} inputId={"first_name"} />
-                        <Input containerClassname={"home_container_form_lastName"} htmlFor={"last_name"} labelText={"Last Name"} type={"text"} inputId={"last_name"} />
+                        <Input containerClassname={"home_container_form_firstName"} htmlFor={"first_name"} labelText={"First Name"} type={"text"} inputId={"first_name"} inputOnChange={(e) => setFirstName(e.target.value)} />
+                        <Input containerClassname={"home_container_form_lastName"} htmlFor={"last_name"} labelText={"Last Name"} type={"text"} inputId={"last_name"} inputOnChange={(e) => setLastName(e.target.value)} />
                     </div>
                     <div className="home_container_form_littleContainer">
                         <div className="home_container_form_dateOfBirth">
@@ -47,15 +74,15 @@ function Home() {
                     <fieldset className="home_container_form_fieldset">
                         <legend>Address</legend>
                         <div className="home_container_form_littleContainer">
-                            <Input containerClassname={"home_container_form_street"} htmlFor={"street"} labelText={"Street"} type={"text"} inputId={"street"} />
-                            <Input containerClassname={"home_container_form_city"} htmlFor={"city"} labelText={"City"} type={"text"} inputId={"city"} />
+                            <Input containerClassname={"home_container_form_street"} htmlFor={"street"} labelText={"Street"} type={"text"} inputId={"street"} inputOnChange={(e) => setStreet(e.target.value)} />
+                            <Input containerClassname={"home_container_form_city"} htmlFor={"city"} labelText={"City"} type={"text"} inputId={"city"} inputOnChange={(e) => setCity(e.target.value)} />
                         </div>
                         <div className="home_container_form_littleContainer">
                             <div className="home_container_form_state">
                                 <label htmlFor="state">State</label>
                                 <Dropdown options={stateOptions} onChange={(option) => setSelectedState(option)} value={selectedState} placeholder="Select a state" />
                             </div>
-                            <Input containerClassname={"home_container_form_zipCode"} htmlFor={"zip_code"} labelText={"Zip Code"} type={"number"} inputId={"zip_code"} />
+                            <Input containerClassname={"home_container_form_zipCode"} htmlFor={"zip_code"} labelText={"Zip Code"} type={"number"} inputId={"zip_code"} inputOnChange={(e) => setZipCode(e.target.value)} />
                         </div>
                     </fieldset>
                     <div className="home_container_form_department">

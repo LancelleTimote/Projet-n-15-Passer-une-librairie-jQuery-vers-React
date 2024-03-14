@@ -1,31 +1,34 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    firstName: "",
-    lastName: "",
-    dateOfBirth: null,
-    startDate: null,
-    street: "",
-    city: "",
-    state: "",
-    zipCode: "",
-    department: "",
+    formData: {
+        firstName: "",
+        lastName: "",
+        dateOfBirth: null,
+        startDate: null,
+        address: {
+            street: "",
+            city: "",
+            state: "",
+            zipCode: "",
+        },
+        department: "",
+    },
 };
 
 export const employeeSlice = createSlice({
     name: "employee",
     initialState,
     reducers: {
-        updateField: (state, action) => {
-            const { field, value } = action.payload;
-            state[field] = value;
+        saveFormData: (state, action) => {
+            state.formData = action.payload;
         },
-        resetForm: (state) => {
-            return initialState;
+        clearFormData: (state) => {
+            state.formData = initialState.formData;
         },
     },
 });
 
-export const { updateField, resetForm } = employeeSlice.actions;
+export const { saveFormData, clearFormData } = employeeSlice.actions;
 
 export default employeeSlice.reducer;
