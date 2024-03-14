@@ -1,34 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    formData: {
-        firstName: "",
-        lastName: "",
-        dateOfBirth: null,
-        startDate: null,
-        address: {
-            street: "",
-            city: "",
-            state: "",
-            zipCode: "",
-        },
-        department: "",
-    },
+    employees: [],
 };
 
 export const employeeSlice = createSlice({
     name: "employee",
     initialState,
     reducers: {
-        saveFormData: (state, action) => {
-            state.formData = action.payload;
+        addEmployee: (state, action) => {
+            state.employees.push(action.payload);
         },
-        clearFormData: (state) => {
-            state.formData = initialState.formData;
+        clearEmployees: (state) => {
+            state.employees = [];
         },
     },
 });
 
-export const { saveFormData, clearFormData } = employeeSlice.actions;
+export const { addEmployee, clearEmployees } = employeeSlice.actions;
 
 export default employeeSlice.reducer;

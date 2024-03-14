@@ -9,7 +9,7 @@ import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import stateOptions from "../../services/states.json";
 import departmentOptions from "../../services/departments.json";
-import { saveFormData } from "../../store/employeeSlice";
+import { addEmployee } from "../../store/employeeSlice";
 import { useDispatch } from "react-redux";
 
 function Home() {
@@ -38,17 +38,15 @@ function Home() {
         const formData = {
             firstName,
             lastName,
-            dateOfBirth,
-            startDate,
-            address: {
-                street,
-                city,
-                state: selectedState,
-                zipCode,
-            },
+            dateOfBirth: dateOfBirth.toLocaleDateString(),
+            startDate: startDate.toLocaleDateString(),
+            street,
+            city,
+            state: selectedState,
+            zipCode,
             department: selectedDepartment,
         };
-        dispatch(saveFormData(formData));
+        dispatch(addEmployee(formData));
     };
 
     return (
@@ -80,14 +78,14 @@ function Home() {
                         <div className="home_container_form_littleContainer">
                             <div className="home_container_form_state">
                                 <label htmlFor="state">State</label>
-                                <Dropdown options={stateOptions} onChange={(option) => setSelectedState(option)} value={selectedState} placeholder="Select a state" />
+                                <Dropdown options={stateOptions} onChange={(option) => setSelectedState(option.value)} value={selectedState} placeholder="Select a state" />
                             </div>
                             <Input containerClassname={"home_container_form_zipCode"} htmlFor={"zip_code"} labelText={"Zip Code"} type={"number"} inputId={"zip_code"} inputOnChange={(e) => setZipCode(e.target.value)} />
                         </div>
                     </fieldset>
                     <div className="home_container_form_department">
                         <label htmlFor="department">Department</label>
-                        <Dropdown options={departmentOptions} onChange={(option) => setSelectedDepartment(option)} value={selectedDepartment} placeholder="Select a department" />
+                        <Dropdown options={departmentOptions} onChange={(option) => setSelectedDepartment(option.value)} value={selectedDepartment} placeholder="Select a department" />
                     </div>
                     <div className="home_container_form_button">
                         <button type="submit" className="home_container_form_button_save">
