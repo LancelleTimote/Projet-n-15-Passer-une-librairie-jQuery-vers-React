@@ -11,6 +11,7 @@ import stateOptions from "../../services/states.json";
 import departmentOptions from "../../services/departments.json";
 import { addEmployee } from "../../store/employeeSlice";
 import { useDispatch } from "react-redux";
+import Modal from "../../components/Modal/Modal";
 
 function Home() {
     const [dateOfBirth, setDateOfBirth] = useState("");
@@ -22,6 +23,7 @@ function Home() {
     const [street, setStreet] = useState("");
     const [city, setCity] = useState("");
     const [zipCode, setZipCode] = useState("");
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleDateOfBirthChange = (date) => {
         setDateOfBirth(date);
@@ -47,6 +49,11 @@ function Home() {
             department: selectedDepartment,
         };
         dispatch(addEmployee(formData));
+        setIsModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
     };
 
     return (
@@ -93,6 +100,7 @@ function Home() {
                         </button>
                     </div>
                 </form>
+                <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
             </div>
             <Footer />
         </div>

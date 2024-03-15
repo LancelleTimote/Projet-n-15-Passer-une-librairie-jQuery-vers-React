@@ -1,0 +1,26 @@
+@import "../../style/Utils/Variables.scss";
+
+.employeeList {
+    &_container {
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        &_content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 25px 40px;
+            background: $primary-color;
+            width: 40%;
+            &_title {
+                margin-top: 0;
+                text-align: center;
+                font-size: 40px;
+                font-weight: 600;
+                background: -webkit-linear-gradient(right, #6c840e, #b2d105, #6c840e, #b2d105);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+}
