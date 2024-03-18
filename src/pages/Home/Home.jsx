@@ -9,7 +9,7 @@ import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import stateOptions from "../../services/states.json";
 import departmentOptions from "../../services/departments.json";
-import { addEmployee } from "../../store/employeeSlice";
+import { addEmployee } from "../../redux/slices/employeeSlice";
 import { useDispatch } from "react-redux";
 import { Modal } from "timlancelle-react-modal";
 

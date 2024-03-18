@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Projet n°15 : Passer une librairie jQuery vers React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![GitHub contributors](https://img.shields.io/github/contributors/LancelleTimote/Projet-n-15-Passer-une-librairie-jQuery-vers-React?style=for-the-badge&color=green)
+![GitHub language count](https://img.shields.io/github/languages/count/LancelleTimote/Projet-n-15-Passer-une-librairie-jQuery-vers-React?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/LancelleTimote/Projet-n-15-Passer-une-librairie-jQuery-vers-React?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/LancelleTimote/Projet-n-15-Passer-une-librairie-jQuery-vers-React?style=for-the-badge)
+![GitHub License](https://img.shields.io/github/license/LancelleTimote/Projet-n-15-Passer-une-librairie-jQuery-vers-React?style=for-the-badge)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/timote-lancelle-devweb/)
 
-## Available Scripts
+## :mag: Aperçu
 
-In the project directory, you can run:
+![Aperçu du site web](visuel_projet/visuel_projet.png)
 
-### `npm start`
+## :bookmark_tabs: Sommaire
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<ol>
+    <li><a href="#sujet">Sujet</a></li>
+    <li><a href="#demandes_respecter">Demandes à respecter</a></li>
+    <li><a href="#objectifs_projet">Objectifs du projet</a></li>
+    <li><a href="#technologies_utilisees">Technologies utilisées</a></li>
+    <li><a href="#prerequis">Prérequis</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#utilisation_siteweb">Utilisation du site web</a></li>
+    <li><a href="#auteurs_contributeurs">Auteurs et contributeurs</a></li>
+    <li><a href="#licence">Licence</a></li>
+</ol>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## :page_facing_up: 1. Sujet <a name = "sujet"></a>
 
-### `npm test`
+Vous travaillez pour le département technologique d'une grande société financière, WealthHealth.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Cette société utilise une application web interne, appelée HRnet, qui gère les dossiers des employés.
 
-### `npm run build`
+L'application est ancienne et utilise jQuery côté front end, ce qui entraîne des bugs considérables et une augmentation des plaintes en interne.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Votre équipe de développement s'efforce depuis un certain temps déjà de mettre à niveau l'application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## :memo: 2. Demandes à respecter <a name = "demandes_respecter"></a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   Faire évoluer l'application web statique qui n'utilise que HTML, CSS, JavaScript / jQuery, en une application web dynamique, en utilisant React, React Router, et Sass ;
+-   Utiliser Redux ToolKit pour gérer l'état de l'application ;
+-   Développer un des plugins présents dans la version statique de l'application web sous la forme d'une librarie npm réutilisable.
 
-### `npm run eject`
+## :checkered_flag: 3. Objectifs du projet <a name = "objectifs_projet"></a>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-   Apprendre à utiliser React, React Router, Redux ToolKit ;
+-   Apprendre à créer une librairie npm réutilisable.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## :computer: 4. Technologies utilisées <a name = "technologies_utilisees"></a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-   HTML
+-   CSS / Sass
+-   JavaScript / React.js
+-   Redux / Redux Toolkit
+-   Npm
+-   Git & GitHub
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## :exclamation: 5. Prérequis <a name = "prerequis"></a>
 
-## Learn More
+Aucun
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## :wrench: 6. Installation <a name = "installation"></a>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   Cloner ce repository.
+-   Pour installer les différents packages, dans le terminal à partir du dossier front-end, exécuter npm install.
 
-### Code Splitting
+## :question: 7. Utilisation du site web <a name = "utilisation_siteweb"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-   Dans le terminal à partir du dossier front-end, exécuter npm start ;
+-   La documentation sur le plugin modal / librairie npm développé est disponible ici : https://www.npmjs.com/package/timlancelle-react-modal?activeTab=readme
 
-### Analyzing the Bundle Size
+## :beers: 8. Auteurs et Contributeurs <a name = "auteurs_contributeurs"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Timoté Lancelle : [GitHub](https://github.com/LancelleTimote) / [LinkedIn](https://www.linkedin.com/in/timote-lancelle-devweb/)
 
-### Making a Progressive Web App
+## :page_with_curl: 9. Licence <a name = "licence"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Distribué sous la licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus d'informations.
