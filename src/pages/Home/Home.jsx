@@ -11,7 +11,7 @@ import stateOptions from "../../services/states.json";
 import departmentOptions from "../../services/departments.json";
 import { addEmployee } from "../../store/employeeSlice";
 import { useDispatch } from "react-redux";
-import Modal from "../../components/Modal/Modal";
+import { Modal } from "timlancelle-react-modal";
 
 function Home() {
     const [dateOfBirth, setDateOfBirth] = useState("");
@@ -100,7 +100,7 @@ function Home() {
                         </button>
                     </div>
                 </form>
-                <Modal isOpen={isModalOpen} onClose={handleCloseModal} />
+                {isModalOpen && <Modal message={"Employee created successfully !"} onClose={handleCloseModal} />}
             </div>
             <Footer />
         </div>
