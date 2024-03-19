@@ -69,11 +69,11 @@ function Home() {
                     <div className="home_container_form_littleContainer">
                         <div className="home_container_form_dateOfBirth">
                             <label htmlFor="date_of_birth">Date of Birth</label>
-                            <DatePicker selected={dateOfBirth} onChange={handleDateOfBirthChange} />
+                            <DatePicker id="date_of_birth" selected={dateOfBirth} onChange={handleDateOfBirthChange} />
                         </div>
                         <div className="home_container_form_startDate">
                             <label htmlFor="start_date">Start Date</label>
-                            <DatePicker selected={startDate} onChange={handleStartDateChange} />
+                            <DatePicker id="start_date" selected={startDate} onChange={handleStartDateChange} />
                         </div>
                     </div>
                     <fieldset className="home_container_form_fieldset">

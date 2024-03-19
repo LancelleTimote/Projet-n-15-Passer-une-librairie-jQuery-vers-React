@@ -1,4 +1,4 @@
-import Logo from "../../assets/images/hrnetLogo.png";
+import Logo from "../../assets/images/hrnetLogo.svg";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 
